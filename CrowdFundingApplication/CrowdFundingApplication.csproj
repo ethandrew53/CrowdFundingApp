@@ -6,4 +6,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Helpers\AppState.cs" />
+    <Compile Remove="Data\Helpers\CurrentUser.cs" />
+    <Compile Remove="Data\Helpers\CurrentUserService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\Helpers\AppState.cs" />
+    <Content Include="Data\Helpers\CurrentUserService.cs" />
+    <Content Include="Data\Helpers\CurrentUser.cs" />
+  </ItemGroup>
+
 </Project>

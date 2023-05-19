@@ -1,0 +1,32 @@
+﻿@page "/login"
+@inject UsersService userService
+<PageTitle>Counter</PageTitle>
+
+<h3>Login</h3>
+
+<p>
+    <label for="username">Username: </label>
+    <input id="username" type="username" @bind="username" />
+</p>
+<p>
+    <label for="password">Password: </label>
+    <input id="password" type="password" @bind="password" />
+</p>
+
+@code {
+    private string username;
+    private string password;
+
+    private async Task Login()
+    {
+        bool isAuthenticated = await.UsersService.DoesUserExist(username, password);
+        if (isAuthenticated)
+        {
+
+        }
+        else
+        {
+            
+        }
+    }
+}

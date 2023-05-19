@@ -8,12 +8,36 @@
     </div>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <div style="float: right">
+            @if (isLoggedIn)
+            {
+                <button class="btn btn-primary" style="height: 50px; width: 200px" @onclick="LogOut">Log out</button>
+            }
+            else
+            {
+                <button class="btn btn-primary" style="height: 50px; width: 200px" @onclick="LogIn">Log in</button>
+            }
         </div>
-
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
+
+@code {
+    public bool isLoggedIn { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoggedIn = false;
+    }
+    public void LogOut()
+    {
+        isLoggedIn = false;
+    }
+
+    public void LogIn()
+    {
+        isLoggedIn = true;
+    }
+}
